@@ -1,0 +1,61 @@
+
+h1, h2, h3, h4{
+	font-family: 'opensans-bold';
+}
+body{
+	background-color: #fefefe;	
+}
+.navbar-default{
+	background-color: #fff;
+}
+#logo{
+	font-family: 'madita';
+}
+p, a {font-family: 'opensans';}
+.panel-default{
+	border: 1px solid #eee;
+}
+.panel-body{
+	padding: 15px 50px;
+}
+.panel-default > .regis{
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+	padding: 0 50px 10px;
+}
+.btn-danger, .btn-primary{
+	width: 100%;
+}
+.form-control{
+	background-color: #eee;
+	border:none;
+	box-shadow: none;
+}
+h3,h4{color: #d9534f!important;}
+.footul{
+	color: #777;
+	padding:0px;
+	margin:0px;
+}
+.footul > li{
+	display: inline-block;
+	padding:5px;
+}
+.footul > li > a{
+	color:#aaa;
+}
+#footer{
+	margin-top:20px;
+	padding:0px;
+	bottom: 0px;
+	text-align: center;
+	height: 50px;
+	width: 100%;
+
+}
+a:link {
+text-decoration:none;
+}
+#caption{
+	font-family: 'opensans-bold';
+}

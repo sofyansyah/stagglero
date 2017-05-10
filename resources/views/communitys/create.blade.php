@@ -25,10 +25,10 @@
 						<input type="text" class="form-control" id="tags" placeholder="Tags" name="tags">
 					</div>
 
-					<div class="form-group">
-						<label for="image">Image</label>
-						<input type="text" class="form-control" id="image" placeholder="Image" name="image">
-					</div>
+					         <div class="form-group">
+                <label>Avatar </label>
+                <input type="file" name="image" class="form-control">
+              </div>
 
 					<!-- <div class="form-group">
 						<label for="featured">Featured</label>

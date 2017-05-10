@@ -15,7 +15,7 @@
 
       
     </head>
-        <body>
+    <body>
     @include('include.header')
             
     @yield('content')

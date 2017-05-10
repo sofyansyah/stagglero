@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('profile/{username}', 'ProfileController@profile');
 Route::resource('communitys', 'CommunitysController');
+Route::get('profile/{username}/edit', 'ProfileController@edit_profile');
+Route::post('profile/{id}/edit', 'ProfileController@post_profile');

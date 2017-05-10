@@ -200,7 +200,7 @@
 
 	<div class="col-sm-3 text-left" style="padding:0!important;">
 		<div class="panel">     
-			<ul class="populer"><h4 style="padding-left: 4px; margin-top: -5px;color: #dd5f4c;">Popular Ideas</h4>
+			<ul class="populer"><h4 style="padding-left: 4px; margin-top: -5px;color: #dd5f4c;">Popular Community</h4>
 				<li><a href="">Laundry Online Application</a></li>
 				<li><a href="">Weekend Mengajar</a></li>
 				<li><a href="">Bersepeda ke Monas</a></li>
@@ -211,7 +211,7 @@
 			</ul>
 		</div>   
 		<div class="panel">     
-			<ul class="populer"><h4 style="padding-left: 4px; margin-top: -5px; color: #dd5f4c;">Popular Teamwork</h4>
+			<ul class="populer"><h4 style="padding-left: 4px; margin-top: -5px; color: #dd5f4c;">Popular Post</h4>
 				<li><a href="">Laundry Online Application</a></li>
 				<li><a href="">Weekend Mengajar</a></li>
 				<li><a href="">Bersepeda ke Monas</a></li>

@@ -11,12 +11,12 @@
 @forelse ($communitys as $community)
 
 	<div class="col-md-4 col-sm-6 col-xs-12">
-	<a href=/communitys/{{$community->id}}>
+	<a href={{url('communitys/'.$community->id)}}>
 
 		<div class="panel panel-default">
 		<div class="panel-body" style="padding: 0px;">
 		<p>{{$community->username}}</p>
-		<img src="{{asset('/img/oaka.jpg')}}" width="250"/>
+		<img src="{{asset('/img/oaka.JPG')}}" width="250"/>
 			<p>{{$community->title}}</p>
 			<p>{{$community->description}}</p>
 		</div>

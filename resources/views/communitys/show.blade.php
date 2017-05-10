@@ -26,11 +26,13 @@ border: 1px solid #ddd;
 			<div class="panel panel-default">
 				<div class="panel-body" style="padding: 10px;">
 				<img src="{{asset('/img/guas.png')}}" class="img-circle pull-left" height="30" width="30" style="margin-right: 5px;">
-					<h4> Budi Hartomo</h4><hr>
+				<p>{{$community->username}}</p>
+					
 
 					<p class="title"><b>{{$community->title}}</b></p>
 					<span>{{$community->location}}</span>
 					<p>{{$community->description}}</p>
+
 				</div>
 
 				<div class="panel-footer">

@@ -16,7 +16,8 @@ class CommunitysController extends Controller
      */
     public function index()
     {
-        $communitys = Community::join('users', 'communities.user_id', '=', 'users.id')->get();
+        $communitys = Community::join('users', 'communities.user_id', '=', 'users.id')->select('communities.*','users.username')->get();
+
         return view ('communitys.feeds', compact('communitys'));
     }
 
@@ -62,7 +63,7 @@ class CommunitysController extends Controller
 
     public function show($id)
     {
-        $community = Community::findOrFail($id);
+        $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
         return view('communitys.show', compact ('community'));
     }
 

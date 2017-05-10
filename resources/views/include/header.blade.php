@@ -43,6 +43,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{url('/profile')}}/{{Auth::user()->username}}">Profile</a></li>
+                                 <li><a href="{{url('communitys/create')}}">Create</a></li>
+                                 <li><a href="{{url('communitys')}}">Feeds</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();

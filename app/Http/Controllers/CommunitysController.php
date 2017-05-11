@@ -29,6 +29,7 @@ class CommunitysController extends Controller
     public function create()
     {
         return view('communitys.create');
+
     }
 
     /**
@@ -58,7 +59,7 @@ class CommunitysController extends Controller
         //     'location' => $request->location,
         //     'featured' => $request->featured,
         //     ]);
-       
+       return redirect ('/communitys');
     }
 
     public function show($id)
@@ -70,13 +71,17 @@ class CommunitysController extends Controller
 
     public function edit($id)
     {
-        //
+    $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
+        return view('communitys.edit', compact ('community'));
     }
 
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        //
+        $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
+        $community->update($request)->all();
+
+        return redirect ('/communitys');
     }
 
     /**
@@ -87,6 +92,9 @@ class CommunitysController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
+         $community->delete();
+
+         return redirect ('/communitys');
     }
 }

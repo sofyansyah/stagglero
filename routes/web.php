@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('auth.register');
 });
 
-Route::get('/activity', function () {
-    return view('communitys.activity');
-});
 
 Auth::routes();
 

@@ -23,9 +23,7 @@ p, a {font-family: 'opensans';}
 	border-bottom: 1px solid #eee;
 	padding: 0 50px 10px;
 }
-.btn-danger, .btn-primary{
-	width: 100%;
-}
+
 .form-control{
 	background-color: #eee;
 	border:none;

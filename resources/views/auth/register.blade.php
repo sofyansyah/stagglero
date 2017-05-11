@@ -11,6 +11,9 @@
         margin-top:30px;
     }
     .col-md-7{bottom: 10px;}
+.btn-danger, .btn-primary{
+    width: 100%;
+}
 </style>
 <div class="container">
     <div class="row">

@@ -45,7 +45,7 @@
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <img src="{{asset('img/avatar/'.Auth::user()->avatar)}}" class="img-circle" height="26px" width="26px;">
+                                <img src="{{asset('img/avatar/'.Auth::user()->avatar)}}" class="img-circle" height="28px" width="28px">
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

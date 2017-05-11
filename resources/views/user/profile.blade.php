@@ -8,6 +8,8 @@
         <img src="{{asset('img/avatar/'.$user->avatar)}}" class="img-circle" height="150px" width="150px;" style="top:10;">
         <h1>{{$user->username}}</h1>
       <h5>{{$user->email}}</h5>
+      <h5>{{$user->location}}</h5>
+      <h5>{{$user->facebook}}</h5>
       <a class="btn btn-info">Message</a>
       <a href="{{url('profile/'.$user->username.'/edit')}}" class="btn btn-warning">Edit</a>
       </div>

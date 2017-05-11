@@ -10,8 +10,8 @@
             <form action="{{url('profile/'.$user->id.'/edit')}}" method="POST" style="text-align: left!important;" enctype="multipart/form-data">
             {{csrf_field()}}
              <div class="form-group">
-                <label>Nama Lengkap </label>
-                <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" value="{{$user->name}}">
+                <label>Full Name </label>
+                <input type="text" name="nama" class="form-control" placeholder="Full Name" value="{{$user->name}}">
               </div>
               <div class="form-group">
                 <label>Email </label>
@@ -30,8 +30,8 @@
                 <input type="text" name="bio" class="form-control" placeholder="Bio" value="{{$user->bio}}">
               </div>
               <div class="form-group">
-                <label>Alamat </label>
-                <textarea name="alamat" cols="30" rows="10" class="form-control" placeholder="Alamat">{{$user->alamat}}</textarea>
+                <label>Location </label>
+                <textarea name="alamat" cols="30" rows="10" class="form-control" placeholder="Location">{{$user->alamat}}</textarea>
               </div>
               <div class="form-group">
                 <label>Facebook </label>

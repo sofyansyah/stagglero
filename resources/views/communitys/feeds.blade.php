@@ -153,8 +153,9 @@
 
 @section('content')
 <div class="container" style="margin:0 auto;">     
-
+	
 	@forelse( $communitys as $community )
+	@if ($community->user_id ==Auth::id())
 	<div class="col-md-6">
 		<div class="col-md-12 content-idea">
 			<div class="col-md-2" style="float:left;">
@@ -181,11 +182,13 @@
 				</div>
 			</div>
 		</div>
-
+		
+		@endif
 		@empty
 		No community
-
+		
 		@endforelse
+		
 
 
 

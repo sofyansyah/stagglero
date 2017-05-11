@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Community;
 use Auth;
-
 class CommunitysController extends Controller
 {
     /**
@@ -17,10 +14,8 @@ class CommunitysController extends Controller
     public function index()
     {
         $communitys = Community::join('users', 'communities.user_id', '=', 'users.id')->select('communities.*','users.username')->get();
-
         return view ('communitys.feeds', compact('communitys'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -29,9 +24,7 @@ class CommunitysController extends Controller
     public function create()
     {
         return view('communitys.create');
-
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -47,9 +40,8 @@ class CommunitysController extends Controller
      // $community->location= $request->location; 
      // $community->image= $request->image;
      // $community->featured= $request->featured;  
-
      // $community->save();
-    	Community::create ($request->all());
+        Community::create ($request->all());
         // Community::create ([
         //     'user_id' =>Auth::user()->id,
         //     'title'=> $request->title,
@@ -61,29 +53,22 @@ class CommunitysController extends Controller
         //     ]);
        return redirect ('/communitys');
     }
-
     public function show($id)
     {
         $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
         return view('communitys.show', compact ('community'));
     }
-
-
     public function edit($id)
     {
     $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
         return view('communitys.edit', compact ('community'));
     }
-
-
     public function update(Request $request, $id)
     {
         $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
-        $community->update($request)->all();
-
+        $community->update($request->all());
         return redirect ('/communitys');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -94,7 +79,6 @@ class CommunitysController extends Controller
     {
          $community = Community::join('users', 'communities.user_id', '=', 'users.id')->where('communities.id', $id)->select('communities.*','users.username')->first();
          $community->delete();
-
          return redirect ('/communitys');
     }
 }

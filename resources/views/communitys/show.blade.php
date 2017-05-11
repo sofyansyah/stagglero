@@ -22,13 +22,14 @@
 					<img src="{{asset('img/guas.png')}}" class="img-circle" height="100px" width="100px">
 					@if ($community->user_id ==Auth::id())
 					<form action="/communitys/{{$community->id}}" method="POST" class="pull-right" style="">
-{{ csrf_field() }}
-{{ method_field('DELETE') }}
+						{{ csrf_field() }}
+						{{ method_field('DELETE') }}
 
-					<button class="btn btn-danger btn-sm">delete</button>
+						<button class="btn btn-danger btn-sm">delete</button>
 					</form>
-					@endif
 					<a href="/communitys/{{$community->id}}/edit">edit</a>
+					@endif
+					
 				</div>
 				<div class="col-md-10">
 					<p class="title"><b>{{$community->title}}</b></p>

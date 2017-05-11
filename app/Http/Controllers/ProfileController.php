@@ -10,8 +10,7 @@ use App\User;
 
 class ProfileController extends Controller
 {
-    //
-    public function profile ($username)
+    public function profile($username)
     {
     	$user = User::whereUsername($username)->first();
     	return view ('user.profile', compact('user'));
@@ -36,23 +35,25 @@ class ProfileController extends Controller
         $user->instagram = $r->instagram;
 
 
-        if ($r->hasFile('foto')) {
-                $allowedTipe = [
-                    'jpg', 'jpeg','png','PNG'
-                ];
+        if (!empty($r->foto)) {
+            if ($r->hasFile('foto')) {
+                    $allowedTipe = [
+                        'jpg', 'jpeg','png','PNG'
+                    ];
 
-            $validFile = in_array(pathinfo($r->file('foto')->getClientOriginalName(), PATHINFO_EXTENSION), $allowedTipe);
+                $validFile = in_array(pathinfo($r->file('foto')->getClientOriginalName(), PATHINFO_EXTENSION), $allowedTipe);
 
-            if (!$validFile) {
-                return redirect()->back()->with('warning','Format file harus berupa jpg, jpeg, png, PNG');
+                if (!$validFile) {
+                    return redirect()->back()->with('warning','Format file harus berupa jpg, jpeg, png, PNG');
+                }
+
+                $gambar         = $r->username.'_'.str_random(4) . '.'.pathinfo($r->file('foto')->getClientOriginalName(), PATHINFO_EXTENSION);
+                $upload         = $r->file('foto')->move(public_path() . '/img/avatar/', $gambar);
+
+                $user->avatar   = $gambar;
+            }else{
+                return redirect()->back()->with('warning','Data File lampiran tidak ada');
             }
-
-            $gambar         = $r->username.'_'.str_random(4) . '.'.pathinfo($r->file('foto')->getClientOriginalName(), PATHINFO_EXTENSION);
-            $upload         = $r->file('foto')->move(public_path() . '/img/avatar/', $gambar);
-
-            $user->avatar   = $gambar;
-        }else{
-            return redirect()->back()->with('warning','Data File lampiran tidak ada');
         }
 
         $user->save();

@@ -13,12 +13,15 @@
 
 Route::get('/', function () {
     return view('auth.register');
+    // echo Hash::make('qwerty');
 });
 
 
-Auth::routes();
+// Auth::routes();
+// Route::get('/home', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index');
+Route::get('login', 'HomeController@login');
+Route::post('login', 'HomeController@post_login');
 Route::get('profile/{username}', 'ProfileController@profile');
 Route::resource('communitys', 'CommunitysController');
 Route::resource('posts', 'PostsController');

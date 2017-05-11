@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -11,10 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -24,5 +25,22 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function login()
+    {
+        return view('login');   
+    }
+    public function post_login(Request $r)
+    {
+        $this->validate($r, [
+            'username'     => 'required',
+            'password'  => 'required'
+        ]);
+
+        if (Auth::attempt(['username' => $r->username, 'password' => $r->password])) {
+            return redirect()->intended('profile/'.$r->username);
+        }
+
+        return redirect()->back()->with('error','email dan password yang anda masukan tidak sesuai');
     }
 }

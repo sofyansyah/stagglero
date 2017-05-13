@@ -17,11 +17,11 @@ Route::get('/', function () {
 });
 
 
-// Auth::routes();
-// Route::get('/home', 'HomeController@index');
+Auth::routes();
+Route::get('/home', 'HomeController@index');
 
-Route::get('login', 'HomeController@login');
-Route::post('login', 'HomeController@post_login');
+// Route::get('login', 'HomeController@login');
+// Route::post('login', 'HomeController@post_login');
 Route::get('profile/{username}', 'ProfileController@profile');
 Route::resource('communitys', 'CommunitysController');
 Route::resource('posts', 'PostsController');

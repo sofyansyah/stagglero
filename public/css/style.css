@@ -51,6 +51,9 @@ h3,h4{color: #d9534f!important;}
 	width: 100%;
 
 }
+.sosmed li{
+		display: inline-block;
+	}
 a:link {
 text-decoration:none;
 }
@@ -205,3 +208,4 @@ text-decoration:none;
 	}
 	.more-content {display:none;}
 	.visible {display:block;}
+

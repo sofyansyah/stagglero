@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Hash;
+use Auth;
 use App\User;
 
 class ProfileController extends Controller
 {
-    public function profile($username)
+    public function profile($id)
     {
-    	$user = User::whereUsername($username)->first();
+    	$user = User::join('communities', 'users.id', '=', 'communities.user_id')->select('users.*', 'communities.title', 'communities.description')->first();
+        // $user = User::whereUsername($id)->first();
     	return view ('user.profile', compact('user'));
     }
 

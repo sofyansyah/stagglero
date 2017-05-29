@@ -28,13 +28,13 @@
     </div>
   </div>
 
-  <div class="col-md-12">
+  {{-- <div class="col-md-12">
     <h4>Founder</h4>
     <h1>{{$user->title}}
     {{$user->description}}
     </h1>
     <hr>
-  </div>
+  </div> --}}
 
   <div class="col-md-12">
     <h4>Membered</h4>

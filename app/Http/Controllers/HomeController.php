@@ -43,4 +43,11 @@ class HomeController extends Controller
 
         return redirect()->back()->with('error','email dan password yang anda masukan tidak sesuai');
     }
+    public function register()
+    {
+        if (Auth::check()) {
+            return redirect('home');
+        }
+        return view('auth.register');
+    }
 }

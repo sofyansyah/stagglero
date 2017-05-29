@@ -8,14 +8,20 @@ use App\Http\Requests;
 use Hash;
 use Auth;
 use App\User;
+use App\Community;
 
 class ProfileController extends Controller
 {
     public function profile($id)
     {
-    	$user = User::join('communities', 'users.id', '=', 'communities.user_id')->select('users.*', 'communities.title', 'communities.description')->first();
-        // $user = User::whereUsername($id)->first();
-    	return view ('user.profile', compact('user'));
+    	// $user = User::join('communities', 'users.id', '=', 'communities.user_id')
+     //                  ->select('users.*', 'communities.title', 'communities.description')
+     //                  ->first();
+
+        $user       = User::where('username',$id)->first();
+        $community  = Community::where('user_id',$user->id)->get();
+        // dd($user);
+    	return view ('user.profile', compact('user','community'));
     }
 
     public function edit_profile($username)

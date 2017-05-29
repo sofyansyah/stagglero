@@ -11,19 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.register');
-    // echo Hash::make('qwerty');
+Route::get('/', 'HomeController@register');
+    Route::get('login', 'HomeController@login');
+    Route::post('login', 'HomeController@post_login');
+// Auth::routes();
+
+Route::group(['middleware' => ['login']], function () {
+    Route::get('/home', 'HomeController@index');
+    Route::get('profile/{username}', 'ProfileController@profile');
+    Route::resource('communitys', 'CommunitysController');
+    Route::resource('posts', 'PostsController');
+    Route::get('profile/{username}/edit', 'ProfileController@edit_profile');
+    Route::post('profile/{id}/edit', 'ProfileController@post_profile');
+
 });
-
-
-Auth::routes();
-Route::get('/home', 'HomeController@index');
-
-// Route::get('login', 'HomeController@login');
-// Route::post('login', 'HomeController@post_login');
-Route::get('profile/{username}', 'ProfileController@profile');
-Route::resource('communitys', 'CommunitysController');
-Route::resource('posts', 'PostsController');
-Route::get('profile/{username}/edit', 'ProfileController@edit_profile');
-Route::post('profile/{id}/edit', 'ProfileController@post_profile');
